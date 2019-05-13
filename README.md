@@ -1,5 +1,6 @@
-# Improving With R
+# Improving With R 
 ## A journey using R to assess publicly available data
+## Some of these have been moved to individual repos
 
 ## Glossary:
 ### Install Packages When Needed AND Load Packages (checkload.R)
