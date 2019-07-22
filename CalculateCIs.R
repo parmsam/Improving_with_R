@@ -79,22 +79,16 @@ CI_func <- function(dataset,
 #Bound = 0.6
 
 #Here is an example of how to use this program:
-
-#make sure to source this script in the program you are working on first
-#this way: 
-# add in confidence intervals and test variable (60% width)
+#make sure to source this script in the program you are working on first this way
 #source(paste("S:/EPI/Codebooks, systems, dataset info/R/General Utilities/","Calculate_CIs.R",sep=""))
 
-
-#examples:
-
-# test is my dataframe with the Count and Population_Ct variables 
+# test is my dataframe with the Count and Population_Ct variables: 
 #(these can now be named anything you want as long as they are declared in the function) declared in the df
 # test data: 
 #test<-data.frame(Count=10, Pop=10000)
 # using it this way (below) provides the rates per 100,000, the 95% CI and the boundary indicator for 60% (0.6) cutoff added into the df
 
-# this way:
+#this way:
 #test_ci<-CI_func(test,count=Count, Population_Ct=Pop)
 # OR this way:
 #test_ci<-CI_func(test,Count, Pop)
