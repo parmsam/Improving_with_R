@@ -1,0 +1,57 @@
+# Things you might want to change
+
+# options(papersize="a4")
+# options(editor="notepad")
+# options(pager="internal")
+
+# set the default help type
+# options(help_type="text")
+  options(help_type="html")
+
+# set a site library
+# .Library.site <- file.path(chartr("\\", "/", R.home()), "site-library")
+
+# set a CRAN mirror
+# local({r <- getOption("repos")
+#       r["CRAN"] <- "http://my.local.cran"
+#       options(repos=r)})
+
+# Give a fortune cookie, but only to interactive sessions
+# (This would need the fortunes package to be installed.)
+#  if (interactive()) 
+#    fortunes::fortune()
+
+  
+#useful rePath function taken from r-bloggers post
+#https://www.r-bloggers.com/stop-fiddling-around-with-copied-paths-in-windows-r/
+.rePath <- function() {
+    cat('Paste windows file path and hit RETURN twice')
+    x <- scan(what = "")
+    xa <- gsub('\\', '/', x,fixed=TRUE)
+    writeClipboard(paste(xa, collapse=" "))
+    cat('Heres your de-windowsified path. (Its also on the clipboard.)n', xa, 'n')
+}
+
+user<-Sys.getenv("USERNAME")
+  
+.First <- function(){
+    #suppressMessages()
+    x<-as.numeric(substring(Sys.time(),12,13))
+    if (x < 12 & x > 0){ 
+      cat(paste("Good morning,",user))
+    } else if (x > 12  & x < 17){
+      cat(paste("Good afternoon,",user))
+    } else {
+      cat(paste("Good evening,",user))
+    }
+    cat("\n")
+    cat("\nYour working directory is: " ,getwd())
+    cat("\n")
+    cat("\nWelcome at", paste(Sys.Date()), "\n") 
+}
+
+.Last <- function(){
+  cat("\n")
+  cat("\nGreat work today!")
+  cat("\nGoodbye!")
+}
